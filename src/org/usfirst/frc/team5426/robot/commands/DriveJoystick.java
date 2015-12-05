@@ -19,7 +19,7 @@ public class DriveJoystick extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {		
-		driveTrain.myRobot.arcadeDrive(OI.getLeftAxisY(), OI.getLeftAxisX(), true);
+		driveTrain.arcadeDrive(OI.getLeftAxisY(), OI.getLeftAxisX(), true);
     }
 
     // Make this return true when this Command no longer needs to run execute()
