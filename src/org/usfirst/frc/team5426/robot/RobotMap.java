@@ -20,4 +20,10 @@ public class RobotMap {
     public static final int cLeftBackMotor = 4;
     public static final int cRightMotor = 3;
     public static final int cRightBackMotor = 1;
+    
+    //Port: PWN
+    //Type: SHOOTER MOTORS TALONS
+    public static final int LEFT_SPINNER = 0;
+    public static final int RIGHT_SPINNER = 1;
+
 }

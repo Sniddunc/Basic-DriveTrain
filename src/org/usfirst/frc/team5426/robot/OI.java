@@ -5,6 +5,8 @@ import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 import org.usfirst.frc.team5426.robot.commands.ExampleCommand;
+import org.usfirst.frc.team5426.robot.commands.IntakeBall;
+import org.usfirst.frc.team5426.robot.commands.ShootBall;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -28,15 +30,18 @@ public class OI {
     */
 
     Button buttonA = new JoystickButton(stick, 1);
+    Button buttonB = new JoystickButton(stick, 2);
 
     public OI(){
         /*
-        button.whileHeld(new command());
+        button.whileActive(new command());
         button.whenPressed(new command();
         ... and more http://wpilib.screenstepslive.com/s/3120/m/7952/l/97457-running-commands-on-joystick-input
         */
+    	
+    	buttonA.whileActive(new IntakeBall());
+    	buttonB.whileActive(new ShootBall());
 
-        buttonA.whilePressed(new ExampleCommand());
     }
 
     /**
