@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.buttons.Trigger;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team5426.robot.commands.ExampleCommand;
 import org.usfirst.frc.team5426.robot.commands.IntakeBall;
@@ -48,6 +49,8 @@ public class OI {
     	buttonA.whileActive(new IntakeBall());
     	buttonB.whileActive(new ShootBall());
     	ballNearby.whileActive(new ExampleCommand());
+
+    	SmartDashboard.putBoolean("Button A State", buttonA.get());
 
     }
 

@@ -9,6 +9,8 @@ public class BallNearby extends Trigger {
 	@Override
 	public boolean get() {
 		return (CommandBase.driveTrain.getUltrasonic().getRangeInches() < 4);
+				//&& CommandBase.oi.xBoxJoystick.getButtonX().get();
+		//xBoxJoystick is set to port 1. fix later
 	}
 
 }
