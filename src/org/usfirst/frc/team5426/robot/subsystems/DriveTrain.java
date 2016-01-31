@@ -21,39 +21,39 @@ public class DriveTrain extends Subsystem {
 	private CANTalon mLeftBackMotor;
 	private CANTalon mRightMotor;
 	private CANTalon mRightBackMotor;
-	
+
 	private RobotDrive myRobot;
-	
+
 	private BuiltInAccelerometer mBuiltInAccelerometer;
 	private Ultrasonic mUltrasonic;
 
-	
+
 	public DriveTrain() {
 		//motor = new CANTAlon(port number);
 		//Remember in RobotMap when we learned RobotMap.cLeftMotor is actually just the number 2?
 		//The line below is the same thing as: mLeftMotor = new CANTalon(2);
 
-		mLeftMotor = new CANTalon(RobotMap.cLeftMotor);
-		mLeftBackMotor = new CANTalon(RobotMap.cLeftBackMotor);
-		mRightMotor = new CANTalon(RobotMap.cRightMotor);
-		mRightBackMotor = new CANTalon(RobotMap.cRightBackMotor);
+		mLeftMotor = new CANTalon(RobotMap.LEFT_MOTOR);
+		mLeftBackMotor = new CANTalon(RobotMap.LEFT_BACK_MOTOR);
+		mRightMotor = new CANTalon(RobotMap.RIGHT_MOTOR);
+		mRightBackMotor = new CANTalon(RobotMap.RIGHT_BACK_MOTOR);
 
 		//RobotDrive takes the following port numbers:
 		//RobotDrive(left back, left front, right back, right front)
 		myRobot = new RobotDrive(mLeftBackMotor, mLeftMotor, mRightBackMotor, mRightMotor);
-		
+
 		mBuiltInAccelerometer = new BuiltInAccelerometer();
 		SmartDashboard.putNumber("Accel X (g)", mBuiltInAccelerometer.getX());
 		SmartDashboard.putNumber("Accel Y (g)", mBuiltInAccelerometer.getY());
 		SmartDashboard.putNumber("Accel Z (g)", mBuiltInAccelerometer.getZ());
-		
+
 		mUltrasonic = new Ultrasonic(0, 1); // Add right port numbers. Need to use three ports. Trig/Echo/5V + Gnd
 		mUltrasonic.setAutomaticMode(true);
 		SmartDashboard.putNumber("Distance (in)", mUltrasonic.getRangeInches());
 	}
-		
+
 	public void initDefaultCommand() {
-		setDefaultCommand(new DriveJoystick());
+		//setDefaultCommand(new DriveJoystick());
 	}
 
 	/**
@@ -74,8 +74,8 @@ public class DriveTrain extends Subsystem {
 		return mBuiltInAccelerometer;
 	}
 
-	public Ultrasonic getmUltrasonic() {
+	public Ultrasonic getUltrasonic() {
 		return mUltrasonic;
 	}
-	
+
 }
