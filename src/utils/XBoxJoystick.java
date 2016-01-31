@@ -28,6 +28,7 @@ public class XBoxJoystick extends Joystick {
 		rightStickPress = new JoystickButton(this, 9);
 	}
 
+	// Maybe just rename these to A
 	public Button getButtonA() {
 		return buttonA;
 	}
