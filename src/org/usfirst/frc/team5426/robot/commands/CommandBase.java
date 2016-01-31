@@ -15,11 +15,11 @@ public abstract class CommandBase extends Command {
 	public static ExampleSubsystem exampleSubsystem;
 	public static DriveTrain driveTrain;
 	public static Shooter shooter;
-	
+		
 	public static void init() {
 		exampleSubsystem = new ExampleSubsystem();
 		driveTrain = new DriveTrain();
-		shooter = new Shooter();
+		shooter = new Shooter();		
 	}
 	
 	public CommandBase(String name) {

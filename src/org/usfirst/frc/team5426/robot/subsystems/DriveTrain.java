@@ -3,9 +3,12 @@ package org.usfirst.frc.team5426.robot.subsystems;
 import org.usfirst.frc.team5426.robot.RobotMap;
 import org.usfirst.frc.team5426.robot.commands.DriveJoystick;
 
+import edu.wpi.first.wpilibj.BuiltInAccelerometer;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class DriveTrain extends Subsystem {
 
@@ -20,6 +23,9 @@ public class DriveTrain extends Subsystem {
 	private CANTalon mRightBackMotor;
 	
 	private RobotDrive myRobot;
+	
+	private BuiltInAccelerometer mBuiltInAccelerometer;
+	private Ultrasonic mUltrasonic;
 
 	
 	public DriveTrain() {
@@ -35,6 +41,15 @@ public class DriveTrain extends Subsystem {
 		//RobotDrive takes the following port numbers:
 		//RobotDrive(left back, left front, right back, right front)
 		myRobot = new RobotDrive(mLeftBackMotor, mLeftMotor, mRightBackMotor, mRightMotor);
+		
+		mBuiltInAccelerometer = new BuiltInAccelerometer();
+		SmartDashboard.putNumber("Accel X (g)", mBuiltInAccelerometer.getX());
+		SmartDashboard.putNumber("Accel Y (g)", mBuiltInAccelerometer.getY());
+		SmartDashboard.putNumber("Accel Z (g)", mBuiltInAccelerometer.getZ());
+		
+		mUltrasonic = new Ultrasonic(0, 1); // Add right port numbers. Need to use three ports. Trig/Echo/5V + Gnd
+		mUltrasonic.setAutomaticMode(true);
+		SmartDashboard.putNumber("Distance (in)", mUltrasonic.getRangeInches());
 	}
 		
 	public void initDefaultCommand() {
@@ -53,6 +68,14 @@ public class DriveTrain extends Subsystem {
 			expect a car in any video game.
 		*/
 		myRobot.arcadeDrive(leftAxisY, leftAxisX, true);
+	}
+
+	public BuiltInAccelerometer getBuiltInAccelerometer() {
+		return mBuiltInAccelerometer;
+	}
+
+	public Ultrasonic getmUltrasonic() {
+		return mUltrasonic;
 	}
 	
 }
