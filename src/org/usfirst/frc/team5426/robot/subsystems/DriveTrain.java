@@ -1,7 +1,6 @@
 package org.usfirst.frc.team5426.robot.subsystems;
 
 import org.usfirst.frc.team5426.robot.RobotMap;
-import org.usfirst.frc.team5426.robot.commands.DriveJoystick;
 
 import edu.wpi.first.wpilibj.BuiltInAccelerometer;
 import edu.wpi.first.wpilibj.CANTalon;
@@ -30,7 +29,7 @@ public class DriveTrain extends Subsystem {
 
 	public DriveTrain() {
 		//motor = new CANTAlon(port number);
-		//Remember in RobotMap when we learned RobotMap.cLeftMotor is actually just the number 2?
+		//Remember when we learned RobotMap.LEFT_MOTOR is actually just the number 2? Look at RobotMap class
 		//The line below is the same thing as: mLeftMotor = new CANTalon(2);
 
 		mLeftMotor = new CANTalon(RobotMap.LEFT_MOTOR);

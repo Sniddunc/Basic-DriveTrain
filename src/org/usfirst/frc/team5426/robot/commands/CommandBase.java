@@ -26,6 +26,9 @@ public abstract class CommandBase extends Command {
 		oi = new OI();
 
 		SmartDashboard.putData("Example Subsystem", exampleSubsystem);
+		SmartDashboard.putData("Drive Train", driveTrain);
+		SmartDashboard.putData("Shooter", shooter);
+
 	}
 
 	public CommandBase(String name) {

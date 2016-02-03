@@ -48,12 +48,18 @@ public class OI {
 
     	buttonA.whileActive(new IntakeBall());
     	buttonB.whileActive(new ShootBall());
+    	//xBoxJoystick.getButtonA().whileActive(new IntakeBall());
+    	//xBoxJoystick.getButtonB().whileActive(new ShootBall());
+    	
     	ballNearby.whileActive(new ExampleCommand());
 
     	SmartDashboard.putBoolean("Button A State", buttonA.get());
+    	//SmartDashboard.putBoolean("Button A State", xBoxJoystick.getButtonA().get());
 
     }
 
+    
+    // These could be deleted once the xbox class is working
     /**
      * @return Value of the left analog Y axis
      */

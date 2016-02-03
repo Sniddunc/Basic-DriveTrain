@@ -4,6 +4,15 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
+
+/*
+ * TODO
+ * 
+ * Change all port numbers to constants
+ * Add function to filter out ghost values. Do not replace default getAxis functions
+ * Add support for dpad and start/select buttons
+ * Add limit function. If >1 or <-1 make them 1 or -1
+ */
 public class XBoxJoystick extends Joystick {
 
 	private Button buttonA;
@@ -28,7 +37,6 @@ public class XBoxJoystick extends Joystick {
 		rightStickPress = new JoystickButton(this, 9);
 	}
 
-	// Maybe just rename these to A
 	public Button getButtonA() {
 		return buttonA;
 	}
