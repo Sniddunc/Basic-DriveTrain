@@ -25,5 +25,8 @@ public class RobotMap {
     //Type: SHOOTER MOTORS TALONS
     public static final int LEFT_SPINNER = 0;
     public static final int RIGHT_SPINNER = 1;
+    
+    public static final int ULTRA_ECHO = 0;
+    public static final int ULTRA_PULSE = 1;
 
 }
